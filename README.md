@@ -24,35 +24,19 @@ Styled-components — component-level styling
 Local Storage API — client-side data persistence
 
 📂 Project Structure
-src/
-├── components/
-│   ├── Card/
-│   │   ├── Card.jsx
-│   │   └── Card.styled.js
-│   └── TaskList/
-│       ├── TaskList.jsx
-│       └── TaskList.styled.js
-├── popups/
-│   └── PopNewTaskModal/
-│       ├── PopNewTaskModal.jsx
-│       └── PopNewTaskModal.styled.js
-├── data/
-│   └── cardList.js
-├── styles/
-│   ├── Button.styled.js
-│   └── Global.styled.js
-└── App.jsx
+![alt text](image.png)
+
 
 ⚙️ Installation & Setup
 
 Clone the repository:
 
-git clone https://github.com/yourusername/task-manager.git
+git clone https://github.com/yourusername/kanban-board.git
 
 
 Navigate into the project folder:
 
-cd task-manager
+cd kanban-board
 
 
 Install dependencies:
