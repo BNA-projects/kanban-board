@@ -20,7 +20,7 @@ export const Overlay = styled.div`
 
 export const ModalContainer = styled.div`
   width: 100%;
-  max-width: 630px;
+  max-width: 420px;
   padding: 32px;
   background-color: #fff;
   border-radius: 10px;
@@ -34,46 +34,25 @@ export const ModalContainer = styled.div`
   }
 `;
 
-export const ModalContent = styled.div`
-  width: 100%;
-`;
+// export const ModalContent = styled.div`
+//   width: 100%;
+
+// `;
 
 export const Title = styled.h3`
   color: #000;
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 20px;
-`;
-
-export const Form = styled.form`
+  text-align: center;
   width: 100%;
 `;
 
-export const InputGroup = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin: 20px 0;
 
-  @media (max-width: 495px) {
-    flex-direction: column;
-    align-items: stretch;
-  }
-`;
 
-export const Input = styled.input`
-  flex: 1;
-  padding: 14px;
-  border: 1px solid rgba(148, 166, 190, 0.4);
-  border-radius: 8px;
-  font-size: 14px;
-  outline: none;
-  transition: border-color 0.2s ease;
 
-  &:focus {
-    border-color: #94a6be;
-  }
-`;
+
+
 
 export const CloseButton = styled.button`
   all: unset;

@@ -32,5 +32,13 @@ input, button, textarea, select {
 export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+`;
+
+export const DatepickerFix = createGlobalStyle`
+  .react-datepicker-wrapper {
+    width: 100%;
+  }
+  .react-datepicker__input-container {
+    width: 100%;
+  }
 `;

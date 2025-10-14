@@ -60,3 +60,29 @@ export const CardTitle = styled.h3`
   line-height: 18px;
   margin: 0;
 `;
+
+export const Content = styled.div`
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+`;
+
+export const Date = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+`;
+
+export const DateText = styled.p`
+  margin-left: 6px;
+  font-size: 12px;
+  line-height: 13px;
+  color: #94a6be;
+  letter-spacing: 0.2px;
+`;
+
+export const Icon = styled.svg`
+  width: 13px;
+`;

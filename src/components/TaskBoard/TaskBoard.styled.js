@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Button } from "../../styles/Button.styled";
 
 export const TaskListWrapper = styled.div`
   width: 100%;
@@ -9,7 +10,7 @@ export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
 
   @media (max-width: 660px) {
     flex-direction: column;
@@ -24,6 +25,12 @@ export const Title = styled.h2`
   color: ${({ theme }) => theme.textColor};
 `;
 
+export const TaskButton = styled(Button)`
+  width: 178px;
+  height: 30px;
+  border-radius: 4px;
+`;
+
 export const TaskGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -32,4 +39,3 @@ export const TaskGrid = styled.div`
   align-items: stretch;
   justify-items: stretch;
 `;
-

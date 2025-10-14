@@ -4,7 +4,7 @@ import Card from "../Card/Card";
 import { Container } from "../../styles/Global.styled";
 import { cardList as initialTasks } from "../../data";
 import PopNewTaskModal from "../../popups/PopNewTaskModal/PopNewTaskModal";
-import { Button } from "../../styles/Button.styled";
+import { getCurrentDate } from "../../utils/getCurrentDate";
 
 function TaskBoard() {
   const [tasks, setTasks] = useState(() => {
@@ -16,7 +16,13 @@ function TaskBoard() {
 
   const handleAddTask = (title) => {
     if (!title.trim()) return;
-    const newTask = { id: Date.now(), title };
+
+    const newTask = {
+      id: Date.now(),
+      title,
+      date: getCurrentDate(),
+    };
+
     setTasks((prev) => [...prev, newTask]);
     setIsModalOpen(false);
   };
@@ -34,7 +40,9 @@ function TaskBoard() {
       <S.TaskListWrapper>
         <S.Header>
           <S.Title>My Tasks</S.Title>
-          <Button onClick={() => setIsModalOpen(true)}> Add New Task</Button>
+          <S.TaskButton onClick={() => setIsModalOpen(true)}>
+            Add New Task
+          </S.TaskButton>
         </S.Header>
 
         <S.TaskGrid>
@@ -42,6 +50,7 @@ function TaskBoard() {
             <Card
               key={task.id}
               id={task.id}
+              date={task.date}
               title={task.title}
               onRemove={handleRemoveTask}
             />
