@@ -11,20 +11,35 @@ const CustomDateInput = forwardRef(({ value, onClick }, ref) => (
     ref={ref}
     value={value}
     readOnly
-    placeholder="Choise a date"
+    placeholder="Choose a date"
   />
 ));
 
 const TaskForm = ({ onAddTask }) => {
   const [task, setTask] = useState("");
   const [date, setDate] = useState(null);
+  const [topic, setTopic] = useState("");
+
+  const formatDate = (d) => {
+    if (!d) return null;
+    const day = String(d.getDate()).padStart(2, "0");
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const year = d.getFullYear();
+    return `${day}.${month}.${year}`;
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!task.trim()) return;
-    onAddTask(task, date);
+
+    const formattedDate = formatDate(date);
+
+console.log("ADD:", task, formattedDate, topic);
+onAddTask(task, formattedDate, topic);
+
     setTask("");
     setDate(null);
+    setTopic("");
   };
 
   return (
@@ -35,6 +50,7 @@ const TaskForm = ({ onAddTask }) => {
         value={task}
         onChange={(e) => setTask(e.target.value)}
       />
+
       <DateFieldWrapper>
         <DatePicker
           selected={date}
@@ -43,6 +59,14 @@ const TaskForm = ({ onAddTask }) => {
           dateFormat="dd.MM.yyyy"
         />
       </DateFieldWrapper>
+
+      <StyledInput
+        type="text"
+        placeholder="Enter a new topic..."
+        value={topic}
+        onChange={(e) => setTopic(e.target.value)}
+      />
+
       <Button type="submit">Add Task</Button>
     </Form>
   );

@@ -1,45 +1,39 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import * as S from "./TaskBoard.styled";
 import Card from "../Card/Card";
 import { Container } from "../../styles/Global.styled";
-import { cardList as initialTasks } from "../../data";
 import PopNewTaskModal from "../../popups/PopNewTaskModal/PopNewTaskModal";
-import { getCurrentDate } from "../../utils/getCurrentDate";
+import { useTasks } from "../../hooks/useTasks";
 
 function TaskBoard() {
-  const [tasks, setTasks] = useState(() => {
-    const savedTasks = localStorage.getItem("tasks");
-    return savedTasks ? JSON.parse(savedTasks) : initialTasks;
-  });
+  const { tasks, loading, addTask, deleteTask } = useTasks();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleAddTask = (title) => {
-    if (!title.trim()) return;
-
-    const newTask = {
-      id: Date.now(),
+  const handleAddTask = async (title, date, topic) => {
+    await addTask({
       title,
-      date: getCurrentDate(),
-    };
+      date,
+      topic,
+    });
 
-    setTasks((prev) => [...prev, newTask]);
     setIsModalOpen(false);
   };
 
-  const handleRemoveTask = (id) => {
-    setTasks((prev) => prev.filter((task) => task.id !== id));
+  const handleRemoveTask = async (id) => {
+    await deleteTask(id);
   };
 
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  }, [tasks]);
+  if (loading) {
+    return <p style={{ padding: "20px" }}>Loading tasks...</p>;
+  }
 
   return (
     <Container>
       <S.TaskListWrapper>
         <S.Header>
           <S.Title>My Tasks</S.Title>
+
           <S.TaskButton onClick={() => setIsModalOpen(true)}>
             Add New Task
           </S.TaskButton>
@@ -51,8 +45,9 @@ function TaskBoard() {
               key={task.id}
               id={task.id}
               date={task.date}
+              topic={task.topic}
               title={task.title}
-              onRemove={handleRemoveTask}
+              onRemove={() => handleRemoveTask(task.id)}
             />
           ))}
         </S.TaskGrid>
