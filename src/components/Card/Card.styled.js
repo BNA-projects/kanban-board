@@ -36,8 +36,8 @@ export const Card = styled.div`
 
 export const CardHeader = styled.div`
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 18px;
+ justify-content: space-between;
+  margin-bottom: 30px;
 `;
 
 export const RemoveIcon = styled.img`
