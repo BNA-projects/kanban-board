@@ -1,7 +1,10 @@
 📝 Task Manager App
 
-A simple React-based task management application that allows you to create, view, and delete tasks.
-All tasks are saved locally using Local Storage, so your data stays even after refreshing the page.
+A React-based web application that displays, edits, and manages tasks created through the Telegram Task Manager System.
+
+This app is not a standalone task manager —
+it serves as the web interface for viewing and managing tasks that are created through a Telegram bot, processed via AssemblyAI, and stored in Supabase (PostgreSQL).
+All task data is loaded via API requests directly from the database.
 
 🚀 Features
 
@@ -17,10 +20,20 @@ All tasks are saved locally using Local Storage, so your data stays even after r
 
 ### 🧩 Tech Stack
 
+Frontend
+
 - ⚛️ **React** — UI library for building interactive interfaces
 - 💅 **Styled-components** — CSS-in-JS for scoped component styling
 - 📅 **React Datepicker** — calendar component for selecting task dates
 - 💾 **Local Storage API** — client-side data persistence
+- 🔗 Supabase JS Client — fetching and modifying tasks via AP
+
+Backend (external system)
+
+- 🤖 Telegram Bot (grammY) — creates tasks from text or voice
+- 🎤 AssemblyAI — transcribes voice messages
+- 🗄️ Supabase (PostgreSQL) — stores all task data
+
 
 📂 Project Structure
 ![alt text](image.png)
@@ -53,4 +66,4 @@ Your task will appear in the main grid.
 
 To delete a task, click the 🗑️ icon on its card.
 
-All tasks are automatically saved to localStorage.
+
