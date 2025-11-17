@@ -36,6 +36,7 @@ Backend (external system)
 
 
 📂 Project Structure
+
 ![alt text](image.png)
 
 ⚙️ Installation & Setup
