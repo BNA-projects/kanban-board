@@ -4,6 +4,12 @@ function Header({ toggleTheme, isDarkMode }) {
   return (
     <S.Header>
       <S.HeaderContainer>
+           <S.HeaderLinks>
+                  <S.HeaderNavLink to="/weeks">My weeks plan</S.HeaderNavLink>
+                  <S.HeaderNavLink to="/">
+                    My tasks
+                  </S.HeaderNavLink>
+                </S.HeaderLinks>
         <S.ThemeSwitcher>
           <S.ThemeLabel>
             {isDarkMode ? "Light theme" : "Dark theme"}

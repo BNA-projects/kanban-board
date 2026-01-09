@@ -25,18 +25,17 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   padding: 15px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   }
 `;
 
 export const CardHeader = styled.div`
   display: flex;
- justify-content: space-between;
+  justify-content: space-between;
   margin-bottom: 30px;
 `;
 
@@ -47,12 +46,16 @@ export const RemoveIcon = styled.img`
   opacity: 0.6;
   transition: opacity 0.2s ease;
 
-  filter: ${({ theme }) =>
-    theme.name === "light" ? "invert(0) brightness(0) saturate(100%)" : ""};
+  filter: invert(38%) sepia(40%) saturate(2800%)
+    hue-rotate(205deg) brightness(60%) contrast(300%);
+
   &:hover {
     opacity: 1;
   }
 `;
+
+
+
 
 export const CardTitle = styled.h3`
   font-size: 14px;

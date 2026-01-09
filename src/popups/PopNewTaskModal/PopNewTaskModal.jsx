@@ -16,4 +16,3 @@ function PopNewTaskModal({ onAddTask, onClose }) {
 }
 
 export default PopNewTaskModal;
-
