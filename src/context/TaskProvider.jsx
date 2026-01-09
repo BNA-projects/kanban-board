@@ -73,7 +73,6 @@ export function TasksProvider({ tgUserId = null, children }) {
         "postgres_changes",
         { event: "*", schema: "public", table: "tasks" },
         (payload) => {
-          // Если в провайдере используется tgUserId, то отсекаем чужие события
           const newRow = payload.new;
           const oldRow = payload.old;
 

@@ -3,7 +3,7 @@ import { Button } from "../../styles/Button.styled";
 import { Container } from "../../styles/Global.styled";
 
 export const WeeklyContainer = styled(Container)`
-  max-width: 1440px;
+  max-width: 1920px;
 `;
 
 

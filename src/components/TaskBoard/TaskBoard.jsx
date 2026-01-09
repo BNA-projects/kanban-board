@@ -7,7 +7,7 @@ import { useTasks } from "../../hooks/useTasks";
 
 function TaskBoard() {
   const { tasks, loading, addTask, deleteTask } = useTasks();
-  console.log(tasks);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleAddTask = async (title, date, topic, weekday) => {
