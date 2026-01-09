@@ -45,7 +45,6 @@ const TaskForm = ({ onAddTask }) => {
 
     const formattedDate = formatDate(date);
 
-    console.log("ADD:", task, formattedDate, topic, normalizedWeekday, );
     onAddTask(task, formattedDate, topic, normalizedWeekday);
     setTask("");
     setDate(null);
