@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const Header = styled.header`
   background-color: ${({ theme }) => theme.header.background};
@@ -64,4 +65,34 @@ export const ThemeToggle = styled.input`
     left: 12px;
     background-color: #4a67ff;
   }
+`;
+
+export const HeaderLinks = styled.div`
+  display: flex;
+  gap: 48px;
+  @media (max-width: 600px) {
+    gap: 8px;
+  }
+`;
+export const HeaderNavLink = styled(NavLink)`
+
+  line-height: 170%;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  transition: all 0.3s ease;
+
+  &.active {
+    color: #27ae60;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  &:hover {
+    color: red;
+    transition: all 0.3s ease;
+  }
+
+
 `;

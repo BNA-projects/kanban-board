@@ -1,26 +1,25 @@
 import CategorieButton from "../CategorieButton/CategorieButton";
 import * as S from "./Card.styled";
 
-function Card({ id, title, date,topic, onRemove }) {
+function Card({ id, title, date, topic, onRemove }) {
   const handleRemove = () => {
-    if (window.confirm("Are you sure you want to delete this task?")) {
-      onRemove(id);
-    }
+    onRemove(id);
   };
   return (
     <S.CardItem>
       <S.Card>
         <S.CardHeader>
-          <CategorieButton topic={topic}/>
-       
+          <CategorieButton topic={topic} />
+
           <S.RemoveIcon
             src="/removeIcon.svg"
+            
             alt="Remove card"
             onClick={handleRemove}
+            
           />
         </S.CardHeader>
         <S.Content>
-         
           <S.CardTitle>{title}</S.CardTitle>
           <S.Date>
             <S.Icon
@@ -52,7 +51,6 @@ function Card({ id, title, date,topic, onRemove }) {
               </defs>
             </S.Icon>
             <S.DateText>{date}</S.DateText>
-         
           </S.Date>
         </S.Content>
       </S.Card>

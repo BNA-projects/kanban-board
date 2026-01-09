@@ -2,23 +2,40 @@ import styled from "styled-components";
 
 
 export const categorieColor = {
-  "Web Design": {
-    background: "#ffe4c2",
-    color: "#ff6d00",
+  work: {
+    background: "#e0f2fe",
+    color: "#0284c7",
   },
-  Research: {
-    background: "#b4fdd1",
-    color: "#06b16e",
+  creative: {
+    background: "#fce7f3",
+    color: "#db2777",
   },
-  Copywriting: {
-    background: "#e9d4ff",
-    color: "#9a48f1",
+  finance: {
+    background: "#dcfce7",
+    color: "#16a34a",
+  },
+  social: {
+    background: "#ede9fe",
+    color: "#7c3aed",
+  },
+  learning: {
+    background: "#fff7ed",
+    color: "#f97316",
+  },
+ home: {
+    background: "#fff1c1", 
+    color: "#f59e0b",
+  },
+  health: {
+    background: "#fee2e2",
+    color: "#dc2626",
   },
   grey: {
     background: "#94a6be",
     color: "#ffffff",
   },
 };
+
 
 export const CategorieButton = styled.div`
   width: auto;
