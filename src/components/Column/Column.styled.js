@@ -1,49 +1,45 @@
 import styled from "styled-components";
 
 export const Column = styled.div`
-  /* width: 20%;
-  margin: 0 auto;
-  display: block;
-  @media (max-width: 1200px) {
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-  } */
+  width: 100%;
 `;
 
 export const ColumnRow = styled.div`
-  background-color: rgba(0, 0, 0, 0.03);
-  border-radius: 12px;
+  background-color: ${({ theme }) => theme.column.background};
+  border-radius: 14px;
   padding: 12px;
-  transition: background-color 0.2s ease;
+
+  border: 1px solid ${({ theme }) => theme.column.border};
+
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: ${({ theme }) => theme.column.hover};
   }
 `;
 
-
-
-
 export const Title = styled.p`
- text-align: center;
+  text-align: center;
   width: 100%;
-  margin-top:6px;
-  margin-bottom:9px;
-  color: #94a6be;
+  margin: 6px 0 9px;
+
   font-size: 14px;
   font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
+
+  color: ${({ theme }) =>
+    theme.mode === "dark" ? "#c6d0e1" : "#94a6be"};
 `;
 
 export const Cards = styled.div`
   width: 100%;
-  display: block;
   position: relative;
+
   @media (max-width: 1200px) {
-    width: 100%;
     display: flex;
-    overflow-y: auto;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 6px;
   }
 `;

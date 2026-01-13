@@ -16,4 +16,9 @@ export const lightTheme = {
     background: "#FFFFFF",
     textColor: "#000000",
   },
+    column: {
+    background: "rgba(0, 0, 0, 0.03)",
+    hover: "rgba(0, 0, 0, 0.05)",
+    border: "transparent",
+  },
 };
