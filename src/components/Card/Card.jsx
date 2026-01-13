@@ -13,7 +13,6 @@ function Card({ id, title, date, topic, onRemove }) {
 
           <S.RemoveIcon
             src="/removeIcon.svg"
-            
             alt="Remove card"
             onClick={handleRemove}
             

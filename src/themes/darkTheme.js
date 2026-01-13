@@ -14,4 +14,9 @@ export const darkTheme = {
     textColor: "#FFFFFF",
     background: "rgba(32, 32, 44, 1)",
   },
+   column: {
+    background: "rgba(255, 255, 255, 0.04)",
+    hover: "rgba(255, 255, 255, 0.08)",
+    border: "rgba(255, 255, 255, 0.12)",
+  },
 };
